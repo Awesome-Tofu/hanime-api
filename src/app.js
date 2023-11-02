@@ -154,8 +154,8 @@ app.get('/:type/:category/:page', async (req, res, next) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.send('Welcome to Hanime Api 👀');
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 const server = app.listen(process.env.PORT || 3000, () => {
