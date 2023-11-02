@@ -14,185 +14,182 @@
 </p>
 
 
-## Routes
-
-### Get Trending
-
-| Parameter | Description                         |
-| --------- | ----------------------------------- |
-| `time`    | day/week/month/3_month/6_month/year |
-| `page`    | page limit may vary                 |
-
-Example request:
-
-```
-GET https://hanime-api-17vh.onrender.com/trending/day/1
-```
-
-Output >>
-
-```
-{
-  "results": [
+<h2 id="routes">Routes</h2>
+<h3 id="get-trending">Get Trending</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>time</code></td>
+<td>day/week/month/3_month/6_month/year</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>page limit may vary</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code>GET https:<span class="hljs-regexp">//</span>hanime-api-<span class="hljs-number">17</span>vh.onrender.com<span class="hljs-regexp">/trending/</span>day<span class="hljs-regexp">/1</span>
+</code></pre><p>Output &gt;&gt;</p>
+<pre><code>{
+  <span class="hljs-string">"results"</span>: [
     {
-      "id": "123",
-      "name": "Video 1",
-      "slug": "video-1",
-      "cover_url": "https://example.com/cover1.jpg",
-      "views": 1000,
-      "link": "/watch/video-1"
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"123"</span>,
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Video 1"</span>,
+      <span class="hljs-string">"slug"</span>: <span class="hljs-string">"video-1"</span>,
+      <span class="hljs-string">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover1.jpg"</span>,
+      <span class="hljs-string">"views"</span>: <span class="hljs-number">1000</span>,
+      <span class="hljs-string">"link"</span>: <span class="hljs-string">"/watch/video-1"</span>
     },
     {
-      "id": "456",
-      "name": "Video 2",
-      "slug": "video-2",
-      "cover_url": "https://example.com/cover2.jpg",
-      "views": 800,
-      "link": "/watch/video-2"
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"456"</span>,
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Video 2"</span>,
+      <span class="hljs-string">"slug"</span>: <span class="hljs-string">"video-2"</span>,
+      <span class="hljs-string">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover2.jpg"</span>,
+      <span class="hljs-string">"views"</span>: <span class="hljs-number">800</span>,
+      <span class="hljs-string">"link"</span>: <span class="hljs-string">"/watch/video-2"</span>
     },
-    {....}
+    <span class="hljs-meta">{....}</span>
   ],
-  "next_page": "/trending/day/2"
+  <span class="hljs-string">"next_page"</span>: <span class="hljs-string">"/trending/day/2"</span>
 }
-
-```
-
-### Get browse Tags
-
-Example request:
-
-```
-GET https://hanime-api-17vh.onrender.com/tags
-```
-
-Output >>
-
-```
-
+</code></pre><h3 id="get-browse-tags">Get browse Tags</h3>
+<p>Example request:</p>
+<pre><code>GET http<span class="hljs-variable">s:</span>//hanime-api-<span class="hljs-number">17</span>vh.onrender.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">tags</span>
+</code></pre><p>Output &gt;&gt;</p>
+<pre><code>
 {
-  "results": [
+  <span class="hljs-string">"results"</span>: [
     {
-      "id": "123",
-      "text": "Hd",
-      "url": "/tags/hd/0"
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"123"</span>,
+      <span class="hljs-string">"text"</span>: <span class="hljs-string">"Hd"</span>,
+      <span class="hljs-string">"url"</span>: <span class="hljs-string">"/tags/hd/0"</span>
     },
     {
-      "id": "456",
-      "text": "censord",
-      "url": "/tags/censord/0"
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"456"</span>,
+      <span class="hljs-string">"text"</span>: <span class="hljs-string">"censord"</span>,
+      <span class="hljs-string">"url"</span>: <span class="hljs-string">"/tags/censord/0"</span>
     },
-    {...}
+    <span class="hljs-meta">{...}</span>
   ]
 }
-
-
-```
-
-### Get tags
-
-| Parameter  | Description         |
-| ---------- | ------------------- |
-| `category` | category of tags    |
-| `page`     | page limit may vary |
-
-```
-GET https://hanime-api-17vh.onrender.com/hentai-tags/har**/1
-```
-
-Output >>
-
-```
-{
-  "results": [
+</code></pre><h3 id="get-tags">Get tags</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>category of tags</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>page limit may vary</td>
+</tr>
+</tbody>
+</table>
+<pre><code>GET http<span class="hljs-variable">s:</span>//hanime-api-<span class="hljs-number">17</span>vh.onrender.<span class="hljs-keyword">com</span>/hentai-<span class="hljs-keyword">tags</span>/har**/<span class="hljs-number">1</span>
+</code></pre><p>Output &gt;&gt;</p>
+<pre><code>{
+  <span class="hljs-string">"results"</span>: [
     {
-      "id": "123",
-      "name": "Video 1",
-      "slug": "video-1",
-      "cover_url": "https://example.com/cover1.jpg",
-      "views": 1000,
-      "link": "/watch/video-1"
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"123"</span>,
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Video 1"</span>,
+      <span class="hljs-string">"slug"</span>: <span class="hljs-string">"video-1"</span>,
+      <span class="hljs-string">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover1.jpg"</span>,
+      <span class="hljs-string">"views"</span>: <span class="hljs-number">1000</span>,
+      <span class="hljs-string">"link"</span>: <span class="hljs-string">"/watch/video-1"</span>
     },
     {
-      "id": "456",
-      "name": "Video 2",
-      "slug": "video-2",
-      "cover_url": "https://example.com/cover2.jpg",
-      "views": 800,
-      "link": "/watch/video-2"
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"456"</span>,
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Video 2"</span>,
+      <span class="hljs-string">"slug"</span>: <span class="hljs-string">"video-2"</span>,
+      <span class="hljs-string">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover2.jpg"</span>,
+      <span class="hljs-string">"views"</span>: <span class="hljs-number">800</span>,
+      <span class="hljs-string">"link"</span>: <span class="hljs-string">"/watch/video-2"</span>
     },
-    {...}
+    <span class="hljs-meta">{...}</span>
   ],
-  "next_page": "/hentai-tags/har**/2"
+  <span class="hljs-string">"next_page"</span>: <span class="hljs-string">"/hentai-tags/har**/2"</span>
 }
-
-```
-
-### Get video
-
-| Parameter | Description |
-| --------- | ----------- |
-| `id`      | 6969        |
-
-```
-GET https://hanime-api-17vh.onrender.com/watch/overflow
-```
-
-```
-{
-  "results": [
+</code></pre><h3 id="get-video">Get video</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>6969</td>
+</tr>
+</tbody>
+</table>
+<pre><code>GET https:<span class="hljs-regexp">//</span>hanime-api-<span class="hljs-number">17</span>vh.onrender.com<span class="hljs-regexp">/watch/</span>overflow
+</code></pre><pre><code>{
+  <span class="hljs-attr">"results"</span>: [
     {
-      "id": "123",
-      "name": "overflow",
-      "description": "This is a sample video",
-      "poster_url": "https://example.com/poster.jpg",
-      "cover_url": "https://example.com/cover.jpg",
-      "views": 1000,
-      "streams": [
+      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"123"</span>,
+      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"overflow"</span>,
+      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"This is a sample video"</span>,
+      <span class="hljs-attr">"poster_url"</span>: <span class="hljs-string">"https://example.com/poster.jpg"</span>,
+      <span class="hljs-attr">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover.jpg"</span>,
+      <span class="hljs-attr">"views"</span>: <span class="hljs-number">1000</span>,
+      <span class="hljs-attr">"streams"</span>: [
         {
-          "width": 1920,
-          "height": 1080,
-          "size_mbs": 200,
-          "url": "https://example.com/stream.m3u8"
+          <span class="hljs-attr">"width"</span>: <span class="hljs-number">1920</span>,
+          <span class="hljs-attr">"height"</span>: <span class="hljs-number">1080</span>,
+          <span class="hljs-attr">"size_mbs"</span>: <span class="hljs-number">200</span>,
+          <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://example.com/stream.m3u8"</span>
         },
         {
-          "width": 1280,
-          "height": 720,
-          "size_mbs": 120,
-          "url": "https://example.com/stream.m3u8"
+          <span class="hljs-attr">"width"</span>: <span class="hljs-number">1280</span>,
+          <span class="hljs-attr">"height"</span>: <span class="hljs-number">720</span>,
+          <span class="hljs-attr">"size_mbs"</span>: <span class="hljs-number">120</span>,
+          <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://example.com/stream.m3u8"</span>
         }
       ],
-      "tags": [
+      <span class="hljs-attr">"tags"</span>: [
         {
-          "name": "Tag 1",
-          "link": "/hentai-tags/cream***/0"
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tag 1"</span>,
+          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"/hentai-tags/cream***/0"</span>
         },
         {
-          "name": "Tag 2",
-          "link": "/hentai-tags/Mi**/0"
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tag 2"</span>,
+          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"/hentai-tags/Mi**/0"</span>
         }
       ],
-      "episodes": [
+      <span class="hljs-attr">"episodes"</span>: [
         {
-          "id": "456",
-          "name": "Episode 1",
-          "slug": "episode-1",
-          "cover_url": "https://example.com/episode1.jpg",
-          "views": 500,
-          "link": "/watch/episode-1"
+          <span class="hljs-attr">"id"</span>: <span class="hljs-string">"456"</span>,
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Episode 1"</span>,
+          <span class="hljs-attr">"slug"</span>: <span class="hljs-string">"episode-1"</span>,
+          <span class="hljs-attr">"cover_url"</span>: <span class="hljs-string">"https://example.com/episode1.jpg"</span>,
+          <span class="hljs-attr">"views"</span>: <span class="hljs-number">500</span>,
+          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"/watch/episode-1"</span>
         },
         {
-          "id": "789",
-          "name": "Episode 2",
-          "slug": "episode-2",
-          "cover_url": "https://example.com/episode2.jpg",
-          "views": 300,
-          "link": "/watch/episode-2"
+          <span class="hljs-attr">"id"</span>: <span class="hljs-string">"789"</span>,
+          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Episode 2"</span>,
+          <span class="hljs-attr">"slug"</span>: <span class="hljs-string">"episode-2"</span>,
+          <span class="hljs-attr">"cover_url"</span>: <span class="hljs-string">"https://example.com/episode2.jpg"</span>,
+          <span class="hljs-attr">"views"</span>: <span class="hljs-number">300</span>,
+          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"/watch/episode-2"</span>
         }
       ]
     }
   ]
 }
-
-```
-
-
+</code></pre>
