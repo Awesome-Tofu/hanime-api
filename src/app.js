@@ -137,7 +137,7 @@ app.get('/browse/:type', async (req, res, next) => {
 app.get('/tags', async (req, res, next) => {
   try {
     const data = await getBrowse();
-    const jsondata = data.hentai_tags.map((x) => ({ ...x, url: `/tags/${x.text}/0` }));
+    const jsondata = data.hentai_tags.map((x) => ({ ...x, url: `/hentai-tags/${x.text}/0` }));
     res.json({ results: jsondata });
   } catch (error) {
     next(error);
