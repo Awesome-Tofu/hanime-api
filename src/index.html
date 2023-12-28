@@ -108,6 +108,12 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @media screen and (max-width: 720px) {
+        table td.breakable {
+            white-space: normal;
+        }
+    }
   </style>
 </head>
 <body>
@@ -135,7 +141,7 @@
       <tbody>
         <tr>
           <td><code>time</code></td>
-          <td>day/week/month/3_month/6_month/year</td>
+          <td id="trending-description">day/week/month/3_month/6_month/year</td>
         </tr>
         <tr>
           <td><code>page</code></td>
@@ -369,6 +375,22 @@
       }
       // ... other options
     });
+
+      // Check screen width and add line breaks if needed
+    function adjustLineBreaks() {
+        const trendingDescription = document.getElementById('trending-description');
+        if (window.innerWidth < 720) {
+        trendingDescription.innerHTML = 'day/week/month/ <br> 3_month/6_month <br> /year';
+        } else {
+        trendingDescription.innerHTML = 'day/week/month/3_month/6_month/year';
+        }
+    }
+
+    // Adjust line breaks on window resize
+    window.addEventListener('resize', adjustLineBreaks);
+
+    // Initial adjustment on page load
+    adjustLineBreaks();
   </script>
 
 </body>
