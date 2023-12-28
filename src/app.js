@@ -41,6 +41,49 @@ const getTrending = async (time, page) => {
   return jsondata;
 };
 
+const searchq = async(req, res, search_query, search_page) => {
+    const search_ordering = "desc";
+    const search_order_by = "released_at_unix";
+
+    const resData = {
+        search_text: search_query,
+        tags: [],
+        brands: [],
+        blacklist: [],
+        order_by: search_order_by,
+        ordering: search_ordering,
+        page: search_page,
+    };
+
+    const headers = {
+        'Content-Type': 'application/json; charset=utf-8',
+    };
+
+    const searchApi = 'https://search.htv-services.com';
+
+    try {
+        const response = await axios.post(searchApi, resData, { headers });
+        const results = response.data;
+        const resp = JSON.parse(results.hits);
+        const modified_resp = resp.map((video) => ({
+          id: video.id,
+          name: video.name.trim(),
+          slug: video.slug,
+          cover_url: video.cover_url,
+          views: video.views,
+          link: `/watch/${video.slug}`,
+        }));
+        const ret = {
+            results: modified_resp,
+            next_page: `/search/${search_query}/${results.page+1}`,
+        };
+        res.status(200).json(ret);
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+
 const getVideo = async (slug) => {
   const videoApiUrl = 'https://hanime.tv/api/v8/video?id=';
   const videoDataUrl = videoApiUrl + slug;
@@ -116,6 +159,12 @@ app.get('/trending/:time/:page', async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});
+
+app.get('/search/:search_query/:search_page', async (req,res)=>{
+  const {search_query} = req.params;
+  const {search_page} = req.params;
+  await searchq(req, res, search_query, search_page);
 });
 
 app.get('/browse/:type', async (req, res, next) => {
