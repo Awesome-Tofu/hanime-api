@@ -1,195 +1,319 @@
-<p align="center">
-  <a href="https://github.com/Awesome-tofu/hanime-api">
-    <img src="https://raw.githubusercontent.com/Awesome-Tofu/hanime-api/main/images/image1.png?token=GHSAT0AAAAAAB7SRNLLNZPVHKLMSUSELSLKZKDRGKA" alt="Logo" width="85" height="85">
-  </a>
-
-  <h3 align="center">Hanime API</h3>
-
-  <p align="center">
-    <samp>A hentai streaming API 👀</samp>
-    <br />
-    <a href="#routes"><strong>Explore the api »</strong></a>
-    <br />
-  </p>
-</p>
-
-
-<h2 id="routes">Routes</h2>
-<h3 id="get-trending">Get Trending</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>time</code></td>
-<td>day/week/month/3_month/6_month/year</td>
-</tr>
-<tr>
-<td><code>page</code></td>
-<td>page limit may vary</td>
-</tr>
-</tbody>
-</table>
-<p>Example request:</p>
-<pre><code>GET https:<span class="hljs-regexp">//</span>hanime-api-<span class="hljs-number">17</span>vh.onrender.com<span class="hljs-regexp">/trending/</span>day<span class="hljs-regexp">/1</span>
-</code></pre><p>Output &gt;&gt;</p>
-<pre><code>{
-  <span class="hljs-string">"results"</span>: [
-    {
-      <span class="hljs-string">"id"</span>: <span class="hljs-string">"123"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Video 1"</span>,
-      <span class="hljs-string">"slug"</span>: <span class="hljs-string">"video-1"</span>,
-      <span class="hljs-string">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover1.jpg"</span>,
-      <span class="hljs-string">"views"</span>: <span class="hljs-number">1000</span>,
-      <span class="hljs-string">"link"</span>: <span class="hljs-string">"/watch/video-1"</span>
-    },
-    {
-      <span class="hljs-string">"id"</span>: <span class="hljs-string">"456"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Video 2"</span>,
-      <span class="hljs-string">"slug"</span>: <span class="hljs-string">"video-2"</span>,
-      <span class="hljs-string">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover2.jpg"</span>,
-      <span class="hljs-string">"views"</span>: <span class="hljs-number">800</span>,
-      <span class="hljs-string">"link"</span>: <span class="hljs-string">"/watch/video-2"</span>
-    },
-    <span class="hljs-meta">{....}</span>
-  ],
-  <span class="hljs-string">"next_page"</span>: <span class="hljs-string">"/trending/day/2"</span>
-}
-</code></pre><h3 id="get-browse-tags">Get browse Tags</h3>
-<p>Example request:</p>
-<pre><code>GET http<span class="hljs-variable">s:</span>//hanime-api-<span class="hljs-number">17</span>vh.onrender.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">tags</span>
-</code></pre><p>Output &gt;&gt;</p>
-<pre><code>
-{
-  <span class="hljs-string">"results"</span>: [
-    {
-      <span class="hljs-string">"id"</span>: <span class="hljs-string">"123"</span>,
-      <span class="hljs-string">"text"</span>: <span class="hljs-string">"Hd"</span>,
-      <span class="hljs-string">"url"</span>: <span class="hljs-string">"/tags/hd/0"</span>
-    },
-    {
-      <span class="hljs-string">"id"</span>: <span class="hljs-string">"456"</span>,
-      <span class="hljs-string">"text"</span>: <span class="hljs-string">"censord"</span>,
-      <span class="hljs-string">"url"</span>: <span class="hljs-string">"/tags/censord/0"</span>
-    },
-    <span class="hljs-meta">{...}</span>
-  ]
-}
-</code></pre><h3 id="get-tags">Get tags</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>category</code></td>
-<td>category of tags</td>
-</tr>
-<tr>
-<td><code>page</code></td>
-<td>page limit may vary</td>
-</tr>
-</tbody>
-</table>
-<pre><code>GET http<span class="hljs-variable">s:</span>//hanime-api-<span class="hljs-number">17</span>vh.onrender.<span class="hljs-keyword">com</span>/hentai-<span class="hljs-keyword">tags</span>/har**/<span class="hljs-number">1</span>
-</code></pre><p>Output &gt;&gt;</p>
-<pre><code>{
-  <span class="hljs-string">"results"</span>: [
-    {
-      <span class="hljs-string">"id"</span>: <span class="hljs-string">"123"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Video 1"</span>,
-      <span class="hljs-string">"slug"</span>: <span class="hljs-string">"video-1"</span>,
-      <span class="hljs-string">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover1.jpg"</span>,
-      <span class="hljs-string">"views"</span>: <span class="hljs-number">1000</span>,
-      <span class="hljs-string">"link"</span>: <span class="hljs-string">"/watch/video-1"</span>
-    },
-    {
-      <span class="hljs-string">"id"</span>: <span class="hljs-string">"456"</span>,
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"Video 2"</span>,
-      <span class="hljs-string">"slug"</span>: <span class="hljs-string">"video-2"</span>,
-      <span class="hljs-string">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover2.jpg"</span>,
-      <span class="hljs-string">"views"</span>: <span class="hljs-number">800</span>,
-      <span class="hljs-string">"link"</span>: <span class="hljs-string">"/watch/video-2"</span>
-    },
-    <span class="hljs-meta">{...}</span>
-  ],
-  <span class="hljs-string">"next_page"</span>: <span class="hljs-string">"/hentai-tags/har**/2"</span>
-}
-</code></pre><h3 id="get-video">Get video</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td>6969</td>
-</tr>
-</tbody>
-</table>
-<pre><code>GET https:<span class="hljs-regexp">//</span>hanime-api-<span class="hljs-number">17</span>vh.onrender.com<span class="hljs-regexp">/watch/</span>overflow
-</code></pre><pre><code>{
-  <span class="hljs-attr">"results"</span>: [
-    {
-      <span class="hljs-attr">"id"</span>: <span class="hljs-string">"123"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"overflow"</span>,
-      <span class="hljs-attr">"description"</span>: <span class="hljs-string">"This is a sample video"</span>,
-      <span class="hljs-attr">"poster_url"</span>: <span class="hljs-string">"https://example.com/poster.jpg"</span>,
-      <span class="hljs-attr">"cover_url"</span>: <span class="hljs-string">"https://example.com/cover.jpg"</span>,
-      <span class="hljs-attr">"views"</span>: <span class="hljs-number">1000</span>,
-      <span class="hljs-attr">"streams"</span>: [
-        {
-          <span class="hljs-attr">"width"</span>: <span class="hljs-number">1920</span>,
-          <span class="hljs-attr">"height"</span>: <span class="hljs-number">1080</span>,
-          <span class="hljs-attr">"size_mbs"</span>: <span class="hljs-number">200</span>,
-          <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://example.com/stream.m3u8"</span>
-        },
-        {
-          <span class="hljs-attr">"width"</span>: <span class="hljs-number">1280</span>,
-          <span class="hljs-attr">"height"</span>: <span class="hljs-number">720</span>,
-          <span class="hljs-attr">"size_mbs"</span>: <span class="hljs-number">120</span>,
-          <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://example.com/stream.m3u8"</span>
-        }
-      ],
-      <span class="hljs-attr">"tags"</span>: [
-        {
-          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tag 1"</span>,
-          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"/hentai-tags/cream***/0"</span>
-        },
-        {
-          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tag 2"</span>,
-          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"/hentai-tags/Mi**/0"</span>
-        }
-      ],
-      <span class="hljs-attr">"episodes"</span>: [
-        {
-          <span class="hljs-attr">"id"</span>: <span class="hljs-string">"456"</span>,
-          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Episode 1"</span>,
-          <span class="hljs-attr">"slug"</span>: <span class="hljs-string">"episode-1"</span>,
-          <span class="hljs-attr">"cover_url"</span>: <span class="hljs-string">"https://example.com/episode1.jpg"</span>,
-          <span class="hljs-attr">"views"</span>: <span class="hljs-number">500</span>,
-          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"/watch/episode-1"</span>
-        },
-        {
-          <span class="hljs-attr">"id"</span>: <span class="hljs-string">"789"</span>,
-          <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Episode 2"</span>,
-          <span class="hljs-attr">"slug"</span>: <span class="hljs-string">"episode-2"</span>,
-          <span class="hljs-attr">"cover_url"</span>: <span class="hljs-string">"https://example.com/episode2.jpg"</span>,
-          <span class="hljs-attr">"views"</span>: <span class="hljs-number">300</span>,
-          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"/watch/episode-2"</span>
-        }
-      ]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanime API Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
     }
-  ]
-}
-</code></pre>
+
+    header {
+      background-color: #343a40;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: #28a745;
+      margin-top: 0;
+    }
+
+    section {
+      background-color: #343a40;
+      color: #ffffff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      border: 1px solid #dee2e6;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #28a745;
+      color: #ffffff;
+    }
+
+    pre {
+      background-color: #f1f1f1;
+      color: black;
+      padding: 15px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+
+    /* Styles for the Explore the API button */
+    a.explore-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    a.explore-button:hover {
+      background-color: #176e2c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #343a40;
+      color: #ffffff;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div data-scroll-container="">
+
+  <header>
+    <a href="https://github.com/Awesome-tofu/hanime-api">
+      <img src="https://i.pinimg.com/564x/90/1f/42/901f42bbc082f886119340edc86bb394.jpg" alt="Logo" width="85" height="85">
+    </a>
+    <h3>Hanime API</h3>
+    <p><samp>Documentation for an awesome API</samp></p>
+    <p><a href="#get-trending" class="explore-button"><strong>Explore the API »</strong></a></p>
+  </header>
+
+  <section id="get-trending">
+    <h2>Get Trending</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>time</code></td>
+          <td>day/week/month/3_month/6_month/year</td>
+        </tr>
+        <tr>
+          <td><code>page</code></td>
+          <td>page limit may vary</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Example request:</p>
+    <pre><code>GET https://hanime.cyclic.app/trending/day/1</code></pre>
+    <p>Output &gt;&gt;</p>
+    <pre><code>{
+        "results": [
+          {
+            "id": "123",
+            "name": "Video 1",
+            "slug": "video-1",
+            "cover_url": "https://example.com/cover1.jpg",
+            "views": 1000,
+            "link": "/watch/video-1"
+          },
+          {
+            "id": "456",
+            "name": "Video 2",
+            "slug": "video-2",
+            "cover_url": "https://example.com/cover2.jpg",
+            "views": 800,
+            "link": "/watch/video-2"
+          },
+          {....}
+        ],
+        "next_page": "/trending/day/2"
+      }</code></pre>
+  </section>
+
+  <section id="get-browse-tags">
+    <h2>Get Browse Tags</h2>
+    <p>Example request:</p>
+    <pre><code>GET https://hanime.cyclic.app/tags</code></pre>
+    <p>Output &gt;&gt;</p>
+    <pre><code>{
+        "results": [
+          {
+            "id": "123",
+            "text": "Hd",
+            "url": "/tags/hd/0"
+          },
+          {
+            "id": "456",
+            "text": "censord",
+            "url": "/tags/censord/0"
+          },
+          {...}
+        ]
+      }</code></pre>
+  </section>
+
+  <section id="get-tags">
+    <h2>Get Tags</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>category</code></td>
+          <td>category of tags</td>
+        </tr>
+        <tr>
+          <td><code>page</code></td>
+          <td>page limit may vary</td>
+        </tr>
+      </tbody>
+    </table>
+    <pre><code>GET https://hanime.cyclic.app/hentai-tags/loli/1</code></pre>
+    <p>Output &gt;&gt;</p>
+    <pre><code>{
+        "results": [
+          {
+            "id": "123",
+            "text": "Hd",
+            "url": "/tags/hd/0"
+          },
+          {
+            "id": "456",
+            "text": "censord",
+            "url": "/tags/censord/0"
+          },
+          {...}
+        ]
+      }</code></pre>
+  </section>
+
+  <section id="get-video">
+    <h2>Get Video</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>id</code></td>
+          <td>2583</td>
+        </tr>
+      </tbody>
+    </table>
+    <pre><code>GET https://hanime.cyclic.app/watch/ane-wa-yanmama-junyuu-chuu-1</code></pre>
+    <pre><code>{
+        "results": [
+          {
+            "id": 2583,
+            "name": "Ane wa Yanmama Junyuu-chuu 1",
+            "description": "This is a sample video",
+            "poster_url": "https://example.com/poster.jpg",
+            "cover_url": "https://example.com/cover.jpg",
+            "views": 1000,
+            "streams": [
+              {
+                "width": 1920,
+                "height": 1080,
+                "size_mbs": 200,
+                "url": "https://example.com/stream.m3u8"
+              },
+              {
+                "width": 1280,
+                "height": 720,
+                "size_mbs": 120,
+                "url": "https://example.com/stream.m3u8"
+              }
+            ],
+            "tags": [
+              {
+                "name": "Tag 1",
+                "link": "/hentai-tags/cream***/0"
+              },
+              {
+                "name": "Tag 2",
+                "link": "/hentai-tags/Mi**/0"
+              }
+            ],
+            "episodes": [
+              {
+                "id": "456",
+                "name": "Episode 1",
+                "slug": "episode-1",
+                "cover_url": "https://example.com/episode1.jpg",
+                "views": 500,
+                "link": "/watch/episode-1"
+              },
+              {
+                "id": "789",
+                "name": "Episode 2",
+                "slug": "episode-2",
+                "cover_url": "https://example.com/episode2.jpg",
+                "views": 300,
+                "link": "/watch/episode-2"
+              }
+            ]
+          }
+        ]
+      }</code></pre>
+
+  </section>
+
+
+</div>
+<footer>
+    <p>&copy; 2024 TOFU API. All rights reserved. | <a href="https://github.com/Awesome-Tofu" target="_blank">Visit me on GitHub</a></p></p>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+    // Initialize Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+      smartphone: {
+        smooth: true
+      }
+      // ... other options
+    });
+  </script>
+
+</body>
+</html>
